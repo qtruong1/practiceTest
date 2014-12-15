@@ -46,5 +46,5 @@ When(/^I click on "Continue" button$/) do
 	click_link_or_button("Continue")
 end
 Then(/^I should be on "Entrees" page$/) do
-	expect(page).to have_selector(:id, 'js-mainSiteNavigation')
+	expect(page).to have_selector(:id, 'entree-BuildYourOwn')
 end
