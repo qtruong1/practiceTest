@@ -17,3 +17,15 @@ Given I visit Address Information page
 	When I fill out "Address Information" form
 	   And I click on "Continue" button
 	Then I should be on "Entrees" page
+
+@test3
+Scenario: Ordering "Specialty Pizza"
+Given I am on "Specialty Pizza" page
+   When I click on Chiken & Bacon Carbonara text link
+      And I click on "Add to Order" button from Chicken & Bacon Carbonara
+   Then I should be able to be back on the Specialty Pizza page
+      And I should see the selected pizza added in "My Order"
+   When I click on "Checkout" button
+   Then I should be on "Continue Checkout" page
+   When I click on "Continue Checkout" button
+   Then I should be Place the Order page
