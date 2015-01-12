@@ -132,6 +132,6 @@ When(/^I click on "Continue Checkout" button$/) do
 end	
 Then(/^I should be on Place the Order page$/) do
 #	find(:xpath, '/html/body/div[1]/div/div/form/div[6]').click
-    close_ad
+        close_ad
 	expect(page).to have_selector(:id, 'orderPaymentPage')
 end
