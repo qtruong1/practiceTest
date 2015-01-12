@@ -50,6 +50,10 @@ def navigate_to_specialtypizza
 	find(".navigation-Pizza").click
 end
 
+#close the ad
+def close_ad
+	find(".js-nothanks").click
+end
 
 ####-----BODY go Below this line----######
 
@@ -124,8 +128,10 @@ Then(/^I should be on "Continue Checkout" page$/) do
 end
 When(/^I click on "Continue Checkout" button$/) do
 	find(:xpath, '/html/body/div[2]/div[2]/div/div/div/aside/a').click
+#	find(:xpath, '/html/body/div[1]/div[2]/div/div/div/aside/a').click
 end	
 Then(/^I should be on Place the Order page$/) do
 #	find(:xpath, '/html/body/div[1]/div/div/form/div[6]').click
+    close_ad
 	expect(page).to have_selector(:id, 'orderPaymentPage')
 end
