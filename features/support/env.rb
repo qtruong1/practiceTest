@@ -7,3 +7,8 @@ require 'timeout'
 # and get a good warm fuzzy feeling
 
 Capybara.default_driver = :selenium
+
+#AfterStep('@pause') do 
+#	print "Press Return to continue ..."
+#	STDIN.getc
+#end
