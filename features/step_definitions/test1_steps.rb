@@ -175,7 +175,6 @@ Then(/^I should be on "Continue Checkout" page$/) do
 end
 When(/^I select Continue Checkout button$/) do
 	click_link("Continue Checkout")
-	# require 'debug'
 end
 Then(/^I should be on Order Summary page with correct order$/) do
 	expect(page).to have_selector('h2', text: 'ORDER SUMMARY')
@@ -183,4 +182,3 @@ Then(/^I should be on Order Summary page with correct order$/) do
 	expect(page).to have_css(".price", :text => "$9.99", :minimum => 2)
 	expect(page).to have_selector('h3', text: 'Chicken & Bacon Carbonara')
 end
-
