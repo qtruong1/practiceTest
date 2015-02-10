@@ -2,16 +2,9 @@
 #Home page
 def order_online_page
 	find(".qa-Cl_order").click
-	sleep 3
 end
 
-
-#find and click on Delivery car icon
-#def delivery_icon_selection
-#	find(".Delivery").click
-#end
-
-	#Filling out Address Information	
+#Filling out Address Information	
 def filling_address_info
 	#find and select address type=House
     find(:id, 'Address_Type_Select').click
@@ -24,26 +17,22 @@ def filling_address_info
 	fill_in('City', :with => 'McLean')
 	#find and select State=VA
 	select('VA', from: 'Region')
-	#find('option', :text=> 'VA').click
-	#find and and fillout Zipcode
 	find(:id, 'Postal_Code').click
 	fill_in('Zip Code', :with => '22107-0002')
 end
 
 #Clicking on Continue button
 def continue_button
-	click_link_or_button("Continue")
+	find(".btn--large").click
 end
 
 def selecting_delivery_store
 	filling_address_info
 	find('.Locations').click
 	continue_button
-#	first(".js-futureDeliveryOrder", :minimum => 1).click
-	first(".js-orderDeliveryNow", :minimum => 1).click
-#	all(".js-orderDeliveryNow")[3].click (example when it is not at first position)
-#	first("[data-type='Delivery']", :minimum => 1).click
-#	
+	within all("[data-storeid='4349']", :minimum => 2)[1] do
+		find("[data-type='Carryout']").click
+	end
 end
 
 #method to visit "Specialty Pizza" page
